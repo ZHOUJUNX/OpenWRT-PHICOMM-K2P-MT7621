@@ -11,4 +11,11 @@
 #
 
 # Modify default IP
-#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/172.16.253.254/g' package/base-files/files/bin/config_generate
+echo '### Updates default IP gate ###'
+
+# echo '### Updates Theme Argon ###'
+# package/lean/luci-theme-argon /package/feeds/luci/luci-theme-argon
+rm -rf package/feeds/luci/luci-theme-argon
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/feeds/luci/luci-theme-argon
+echo '###  ###'
